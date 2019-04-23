@@ -1,0 +1,11 @@
+{
+  "name": "carpo",
+  "version": "1.0.0",
+  "description": "Getting back into the swing of things",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Ruth E. Hill",
+  "license": "ISC"
+}
