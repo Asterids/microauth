@@ -3,7 +3,7 @@ const express = require('express');
 const carpoApp = express();
 
 // you'll of course want static middleware so your browser can request things like your 'bundle.js'
-carpoApp.use(express.static(path.join(__dirname, './path')))
+carpoApp.use(express.static('../public'))
 
 // Any routes or other various middlewares should go here!
 
