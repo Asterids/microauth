@@ -11,6 +11,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api', require('./routes'));
 
+// Need both of the calls below to set up paths for static resource routing.
+// Without the static middleware, will see 'Unexpected token <' error when server runs
 app.use(express.static(path.join(__dirname, "/public")))
 
 app.get('*', function (req, res) {
