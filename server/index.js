@@ -28,11 +28,6 @@ app.use(session({
   store: sessionStore.createSessionStore(),
 }));
 
-// app.use((req, res, next) => {
-//   console.log("REQ.SESSION: ", req.session)
-//   next();
-// })
-
 app.use(passport.initialize());
 
 passport.serializeUser((user, done) => done(null, user.id));

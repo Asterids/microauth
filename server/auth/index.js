@@ -1,7 +1,6 @@
 const router = require('express').Router();
 
 router.use('/google', require('./google'));
-// router.use('/github', require('./github'));
 
 router.get('/user', (req, res, next) => {
   res.json(req.user);
