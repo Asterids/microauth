@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const NODE_ENV = process.env.NODE_ENV;
-require('dotenv').config()
+if (NODE_ENV === 'development') { require('dotenv').config() }
 
 const morgan = require('morgan');
 app.use(morgan('dev'));
