@@ -46,7 +46,7 @@ class UsersSummary extends Component {
                                 const label = `${el.name}'s profile photo`;
                                 return (
                                     <li>
-                                        {/* <img src={el.photo} alt={label} className="thumbnail" /> */}
+                                        <img src={el.photo} alt={label} className="thumbnail" />
                                         <br />MicrOAuth User ID: {el.id}
                                         <br />Google Display Name: {el.name || 'no name on record'}
                                         {/* <br />Google email: {el.email} */}
