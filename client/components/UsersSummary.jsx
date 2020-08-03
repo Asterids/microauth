@@ -49,7 +49,7 @@ class UsersSummary extends Component {
                                         <img src={el.photo} alt={label} className="thumbnail" />
                                         <br />MicrOAuth User ID: {el.id}
                                         <br />Google Display Name: {el.name || 'no name on record'}
-                                        {/* <br />Google email: {el.email} */}
+                                        {/* <br />Google contact email: {el.email} */}
                                     </li>
                                 )
                             })}
