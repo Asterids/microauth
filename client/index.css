@@ -74,12 +74,18 @@ a:focus, button:focus {
 }
 
 .profile-photo {
-  height: 250px;
+  height: 200px;
   width: auto;
   border-radius: 50%;
 }
 
-.all-users {
+.thumbnail {
+  height: 75px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.user-list {
   overflow: scroll;
 }
 
@@ -88,4 +94,18 @@ a:focus, button:focus {
   width: 40%;
   justify-content: space-around;
   align-items: center;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 25px 0;
+}
+
+li {
+  margin-bottom: 15px;
 }

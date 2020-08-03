@@ -33,21 +33,26 @@ class UsersSummary extends Component {
 
     render () {
         const { users } = this.state;
-        return this.props.userOnSession ?
+        const { userOnSession } = this.props;
+        return userOnSession ?
             (
-                <div className="container all-users">
+                <div className="container">
                     <header>
                         <h3>All micrOAuth Users:</h3>
                     </header>
                     <section className='user-list'>
                         <ul>
-                            {users.map((el) => (
-                                <li key={el.id}>
-                                    MicrOAuth User ID: {el.id}
-                                    <br />Google Display Name: {el.name || 'no name on record'}
-                                    <br />Google email: {el.email}
-                                </li>
-                            ))}
+                            {users.map((el) => {
+                                const label = `${el.name}'s profile photo`;
+                                return (
+                                    <li>
+                                        <img src={el.photo} alt={label} className="thumbnail" />
+                                        <br />MicrOAuth User ID: {el.id}
+                                        <br />Google Display Name: {el.name || 'no name on record'}
+                                        <br />Google email: {el.email}
+                                    </li>
+                                )
+                            })}
                         </ul>
                     </section>
                     <button type="button" onClick={this.handleBack}>Back</button>

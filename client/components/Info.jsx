@@ -22,12 +22,11 @@ const Info = (props) => {
                     <h3>Hi, {!name ? email : name}! Here is some of your {provider} profile info.</h3>
                 </header>
                 <section className="details">
-                    <p>Lookin' good on Google!</p>
+                    <p>Here's your Google profile image:</p>
                     <img src={photo} alt="Your Google profile photo" className="profile-photo" />
-                    {/* <p>Your Google ID is {googleId}</p> */}
                     <p>Your contact email is {email}</p>
                 </section>
-                <div className='action-links'>
+                <div className="action-links">
                     <button type="button" onClick={visitUserSummary}>View All Users</button>
                     <button type="button" onClick={handleLogout}>Log Out</button>
                 </div>

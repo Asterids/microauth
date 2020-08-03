@@ -45,7 +45,7 @@ app.use('/auth', require('./auth'));
 
 app.get('/allUsers', (req, res, next) => {
     User.findAll({
-      attributes: ['id', 'name', 'email']
+      attributes: ['id', 'name', 'email', 'photo']
     })
     .then(users => res.json(users))
     .catch(next)
