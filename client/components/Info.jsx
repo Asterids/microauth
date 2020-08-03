@@ -1,8 +1,14 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 const Info = (props) => {
     const { name, photo, googleId, email } = props.user;
-    const { provider } = props;
+    const { provider, logout } = props;
+
+    const handleLogout = () => {
+        props.history.push('/');
+        logout();
+    }
 
     return (
         <div className="container">
@@ -15,8 +21,9 @@ const Info = (props) => {
                 <p>Your Google ID is {googleId}</p>
                 <p>Your contact email is {email}</p>
             </section>
+            <button type="button" onClick={handleLogout}>Log Out</button>
         </div>
     )
 }
 
-export default Info;
+export default withRouter(Info);

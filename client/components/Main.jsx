@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from 'react-router-dom';
 import axios from 'axios';
 import Login from './Login';
@@ -12,11 +11,11 @@ import NoUser from './NoUser';
 
 export default class Main extends Component {
   constructor(props) {
-    super();
+    super(props);
 
     this.state =  {
       provider: '',
-      user: {}
+      user: {},
     };
   }
 
@@ -31,6 +30,17 @@ export default class Main extends Component {
       });
     }
   }
+
+  logout = () => {
+    axios.delete('/auth/logout')
+      .then(() => this.setState({
+        user: {},
+        provider: '',
+      }))
+      .catch((err) => {
+        this.setState({ errorMsg: 'Logout was unsuccessful.' })
+      });
+    }
 
   componentDidMount() {
     this.syncSessionData();
@@ -47,7 +57,7 @@ export default class Main extends Component {
               <Login />
             </Route>
             <Route path="/user-info">
-              {this.state.user.id ? <Info user={user} provider={provider} /> : <NoUser />}
+              {this.state.user.id ? <Info user={user} provider={provider} logout={this.logout} /> : <NoUser />}
             </Route>
           </Switch>
         </div>

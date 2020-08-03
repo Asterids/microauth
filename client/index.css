@@ -50,7 +50,7 @@ header {
   border-radius: 10px;
 }
 
-a {
+a, button {
   width: auto;
   padding: 10px;
   background: #EDF7FC;
@@ -59,15 +59,16 @@ a {
   font-size: 18px;
   font-weight: bold;
   text-decoration: none;
-  border: 2px solid #EDF7FC;
+  border: 1px solid #868D98;
+  box-shadow: 7px 7px 10px -5px rgba(125,125,125,1);;
 }
 
-a:hover {
+a:hover, button:hover {
   border: 2px solid #2594D0;
   transition: all 0.5s ease 0s;
 }
 
-a:focus {
+a:focus, button:focus {
   border: 2px solid #2594D0;
   transition: all 0.5s ease 0s;
 }
