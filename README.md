@@ -16,3 +16,10 @@ Check it out [Live](https://rh-microauth.herokuapp.com/)!
 - Passport.js
 - Babel
 - Webpack
+
+## Short-Term Improvements
+
+Some things I'd like to add or improve in this app include:
+- User Summary page should be viewable only to users with "Admin" status, or equivalent
+- Expansion of Google access scopes to include Google Books (or other non-sensetive scope)
+- General UI improvements
