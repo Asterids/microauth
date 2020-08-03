@@ -38,7 +38,7 @@ header {
   border-radius: 10px;
 }
 
-.details {
+section {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -77,4 +77,15 @@ a:focus, button:focus {
   height: 250px;
   width: auto;
   border-radius: 50%;
+}
+
+.all-users {
+  overflow: scroll;
+}
+
+.action-links {
+  display: flex;
+  width: 40%;
+  justify-content: space-around;
+  align-items: center;
 }

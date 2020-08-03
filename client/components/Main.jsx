@@ -7,7 +7,7 @@ import {
 import axios from 'axios';
 import Login from './Login';
 import Info from './Info';
-import NoUser from './NoUser';
+import UsersSummary from './UsersSummary'
 
 export default class Main extends Component {
   constructor(props) {
@@ -16,6 +16,7 @@ export default class Main extends Component {
     this.state =  {
       provider: '',
       user: {},
+      errorMsg: '',
     };
   }
 
@@ -57,7 +58,10 @@ export default class Main extends Component {
               <Login />
             </Route>
             <Route path="/user-info">
-              {this.state.user.id ? <Info user={user} provider={provider} logout={this.logout} /> : <NoUser />}
+              <Info user={user} provider={provider} logout={this.logout} />
+            </Route>
+            <Route path="/users-summary">
+              <UsersSummary userOnSession={user.id} />
             </Route>
           </Switch>
         </div>

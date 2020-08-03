@@ -18,6 +18,7 @@ const passport = require('passport');
 const session = require('express-session');
 const sessionStore = require('sessionstore');
 
+// const Sequelize = require('sequelize');
 const { db, User } = require('./db');
 
 app.use(session({
@@ -41,6 +42,14 @@ passport.deserializeUser((userId, done) => {
 app.use(passport.session());
 
 app.use('/auth', require('./auth'));
+
+app.get('/allUsers', (req, res, next) => {
+    User.findAll({
+      attributes: ['id', 'name', 'email']
+    })
+    .then(users => res.json(users))
+    .catch(next)
+})
 
 // Need both of the calls below to set up paths for static resource routing.
 // Without the static middleware, will see 'Unexpected token <' error when server runs when we try to serve static files

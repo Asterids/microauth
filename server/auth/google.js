@@ -33,7 +33,8 @@ passport.use(
   })
 )
 
-router.get('/', passport.authenticate('google', { scope: 'email' }));
+router.get('/', passport.authenticate('google', { scope: ['profile', 'email'] }));
+// For further development, add scope for Google Books: 'https://www.googleapis.com/auth/books'
 
 
 router.get('/verify', 
